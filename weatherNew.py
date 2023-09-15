@@ -30,28 +30,27 @@ def fetch_weather():
 
 window = tk.Tk()
 window.title("Weather Forecasting Tool")
-window.geometry("500x400") 
+window.geometry("600x400") 
 
-#Set the background color 
-window.configure(bg="#FFFFFF")
 
-frame = tk.Frame(window, bg="#FF0000")
+window.configure(bg="#D3E7F0")
+
+frame = tk.Frame(window, bg="#D3E7F0")
 frame.pack(pady=20)
 
 
-# Created the input label and entry field
-city_label = tk.Label(frame, text="Enter a city name:", bg="#FFFFFF", fg="#333333", font=("Arial", 12))
-city_label.grid(row=0, column=0, padx=5, pady=5)
-city_entry = tk.Entry(frame, font=("Arial", 12))
-city_entry.grid(row=0, column=1, padx=5, pady=5)
+city_label = tk.Label(frame, text="Enter a city name:", bg="#D3E7F0", fg="#333333", font=("Arial", 14))
+city_label.grid(row=0, column=0, padx=10, pady=10)
 
-# (for entering city name) fetching weather button
-fetch_button = tk.Button(frame, text="Fetch Weather", command=fetch_weather, bg="#4CAF50", fg="white", font=("Arial", 12), width=15)
-fetch_button.grid(row=1, column=0, columnspan=2, pady=10)
+city_entry = tk.Entry(frame, font=("Arial", 14))
+city_entry.grid(row=0, column=1, padx=10, pady=10)
+
+fetch_button = tk.Button(frame, text="Fetch Weather", command=fetch_weather, bg="#4CAF50", fg="white", font=("Arial", 14), width=15)
+fetch_button.grid(row=1, column=0, columnspan=2, pady=20)
 
 result_text = tk.StringVar()
-result_label = tk.Label(window, textvariable=result_text, bg="#FFFFFF", fg="#333333", font=("Arial", 12))
+result_label = tk.Label(window, textvariable=result_text, bg="#D3E7F0", fg="#333333", font=("Arial", 14))
 result_label.pack()
 
-# the GUI event loop start from here
 window.mainloop()
+
